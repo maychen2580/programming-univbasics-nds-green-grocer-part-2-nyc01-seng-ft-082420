@@ -262,7 +262,7 @@ describe "Grocer" do
 
         cart = [milk, avocado, avocado, cheese, cheese, cheese]
 
-        expect(checkout(cart, [coupons.first, coupons.last])).to eq(22.60)
+        expect(checkout(cart, [coupons.first, coupons.last])).to eq(23.60)
       end
 
       it "calls on #consolidate_cart before calculating the total for two different items" do
@@ -290,7 +290,7 @@ describe "Grocer" do
         avocado = find_item_by_name_in_collection('AVOCADO', items)
         cart = [avocado, avocado]
         c = [coupons.first]
-        expect(checkout(cart, c)).to eq(4.00)
+        expect(checkout(cart, c)).to eq(5.00)
       end
 
       it "only applies coupons that meet minimum amount" do
